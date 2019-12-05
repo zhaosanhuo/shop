@@ -14,13 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path, include
-
-import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #re_path(r'static/(?p<path>.*)', {'document_root': os.path.join(BASE_DIR,'goods/upload')}),
-    path('', include('goods.urls')),
+    path('index/', views.index),
 ]
